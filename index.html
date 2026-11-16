@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Зерно — кав’ярня у Львові</title>
+<style>
+:root {
+  --bg: #faf5ee;
+  --surface: #ffffff;
+  --text: #2b1d14;
+  --muted: #7a6656;
+  --accent: #b4531f;
+  --accent-text: #ffffff;
+  --line: #e8dccd;
+}
+
+/* Темна тема вмикається автоматично, якщо вона є в системі */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a120d;
+    --surface: #26190f;
+    --text: #f3e8dc;
+    --muted: #b9a592;
+    --accent: #e07a3c;
+    --accent-text: #1a120d;
+    --line: #3a291b;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  z-index: 5;
+}
+
+header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Головний екран */
+.hero {
+  padding: 80px 0 70px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.hero p {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 13px 28px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Секції */
+section {
+  padding: 56px 0;
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin: 0 0 28px;
+}
+
+/* Меню */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.card .row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.card .price {
+  color: var(--accent);
+}
+
+.card p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* Про нас */
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* Форма */
+form {
+  display: grid;
+  gap: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+#msg {
+  color: var(--accent);
+  font-weight: 600;
+  min-height: 1.5em;
+}
+
+/* Футер */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Телефон: ховаємо одне посилання, щоб меню влізло */
+@media (max-width: 560px) {
+  nav a:nth-child(3) {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">Зерно</a><nav><a href="#menu">Меню</a><a href="#about">Про нас</a><a href="#book">Бронь</a></nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<h1>Кава, яку варто<br>смакувати повільно</h1>
+<p>Власне обсмаження, домашня випічка та тихий куточок у серці Львова.</p>
+<a class="btn" href="#book">Забронювати столик</a>
+</div>
+
+<section id="menu"><div class="wrap">
+<h2>Меню</h2>
+<div class="grid">
+<div class="card"><div class="row"><span>Еспресо</span><span class="price">55 ₴</span></div><p>Насичений, з нотами шоколаду.</p></div>
+<div class="card"><div class="row"><span>Флет вайт</span><span class="price">95 ₴</span></div><p>Подвійний еспресо та шовкове молоко.</p></div>
+<div class="card"><div class="row"><span>Раф лавандовий</span><span class="price">115 ₴</span></div><p>Вершки, ваніль і лаванда.</p></div>
+<div class="card"><div class="row"><span>Філтр-кава</span><span class="price">85 ₴</span></div><p>Сезонне зерно, м’яка кислотність.</p></div>
+<div class="card"><div class="row"><span>Круасан мигдальний</span><span class="price">80 ₴</span></div><p>Щоранку свіжий.</p></div>
+<div class="card"><div class="row"><span>Чізкейк львівський</span><span class="price">120 ₴</span></div><p>За бабусиним рецептом.</p></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap info">
+<div><h2>Про нас</h2><p>Ми обсмажуємо зерно щотижня невеликими партіями й працюємо напряму з фермами. Заходьте на каву, залишайтесь на розмову.</p></div>
+<div><h2>Де і коли</h2><p>вул. Вигадана, 12, Львів<br>Пн–Пт: 8:00–21:00<br>Сб–Нд: 9:00–22:00</p></div>
+</div></section>
+
+<section id="book"><div class="wrap">
+<h2>Бронь столика</h2>
+<form id="f">
+<input id="n" placeholder="Ваше ім’я" required>
+<input id="d" type="date" required>
+<select id="g"><option>1–2 гостей</option><option>3–4 гостей</option><option>5–8 гостей</option></select>
+<button class="btn" type="submit">Забронювати</button>
+<div id="msg" role="status"></div>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Зерно · Демо-проєкт для портфоліо</div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('n').value.trim();
+  document.getElementById('msg').textContent='Дякуємо, '+n+'! Ми зв’яжемося з вами для підтвердження.';
+  this.reset();
+});
+</script>
+</body>
+</html>
